@@ -1,24 +1,49 @@
 var grid;
+var row = 0;
+var cell = 0;
 
 function setup() {
   createCanvas(1000, 1000);
   grid = [
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
   ];
 }
 
 function draw() {
-  grid[Math.floor(random(5))][Math.floor(random(5))] = random([true, false]);
-  //console.log("I am in the draw function");
+  if (row > 0) {
+    if (grid[row-1][cell] && grid[row][cell-1]) {
+      grid[row][cell] = random([true, true, true, false]);
+    }
+    else {
+      grid[row][cell] = random([true, true, false, false]);
+    }
+  }
+  else {
+    if (grid[row][cell-1]) {
+      grid[row][cell] = random([true, true, true, false]);
+    }
+    else {
+      grid[row][cell] = random([true, true, false, false]);
+    }
+  }
   //console.log(grid);
-  //grid[3][1] = true;
   grid.forEach(function (row, y) {
     row.forEach(function (cell, x) {
-      if(cell) {
+      if (cell) {
         fill(250, 250, 250);
       }
       else {
@@ -27,7 +52,10 @@ function draw() {
       rect(x*50, y*50, 50, 50);
     })
   })
-  //var x1 = round(random(4))*50;
-  //var y1 = round(random(4))*50;
-  //rect(x1, y1, 50, 50);
+  if (cell < 20)
+    cell ++;
+  else {
+    cell = 0;
+    row ++;
+  }
 }
