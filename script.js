@@ -3,23 +3,23 @@ var row = 0;
 var cell = 0;
 
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(1500, 1500);
   grid = [
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, false, false, true, true, true, false, false, true, true, true, false, true, true, true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, true],
+    [true, false, true, false, true, false, true, false, true, true, false, true, false, true, true, true, true, true, true, true, false, true, false, true, true, true, true, true, true, true],
+    [true, false, true, false, true, false, true, false, true, true, false, true, false, true, true, true, true, true, true, false, true, true, false, true, true, true, true, true, true, true],
+    [true, false, true, true, false, true, true, false, true, false, true, true, true, false, true, true, true, true, true, false, true, true, false, true, true, true, true, true, true, true],
+    [true, false, true, true, true, true, true, false, true, false, false, false, false, false, true, true, true, true, false, true, true, true, false, true, true, true, true, true, true, true],
+    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, true, true, false, true, true, true, false, false, false, false, false, true, true, true],
+    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, true, false, true, true, true, true, false, true, true, true, true, true, true, true],
+    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, false, true, true, true, true, true, false, true, true, true, true, true, true, true],
+    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, false, true, true, true, true, true, false, true, true, true, true, true, true, true],
+    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, false, true, true, true, true, true, true, false, true, true, true, true, true, true, true],
+    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
   ];
 }
 
@@ -52,7 +52,7 @@ function draw() {
       rect(x*50, y*50, 50, 50);
     })
   })
-  if (cell < 20)
+  if (cell < 30)
     cell ++;
   else {
     cell = 0;
