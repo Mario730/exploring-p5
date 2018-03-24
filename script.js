@@ -1,10 +1,10 @@
 var grid;
 var row = 0;
 var cell = 0;
-var numrows = 15;
-var numcolumns = 30;
-var rowHeight = 5;
-var columnWidth = 5;
+var numrows = 30;
+var numcolumns = 60;
+var rowHeight = 25;
+var columnWidth = 25;
 
 function setup() {
   createCanvas(1500, 1500);
@@ -47,7 +47,7 @@ function draw() {
       rect(x*rowHeight, y*columnWidth, rowHeight, columnWidth);
     })
   })
-  if (cell < 30)
+  if (cell < (numcolumns-1))
     cell ++;
   else {
     cell = 0;
