@@ -1,26 +1,21 @@
 var grid;
 var row = 0;
 var cell = 0;
+var numrows = 15;
+var numcolumns = 30;
+var rowHeight = 5;
+var columnWidth = 5;
 
 function setup() {
   createCanvas(1500, 1500);
-  grid = [
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, false, false, true, true, true, false, false, true, true, true, false, true, true, true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, true],
-    [true, false, true, false, true, false, true, false, true, true, false, true, false, true, true, true, true, true, true, true, false, true, false, true, true, true, true, true, true, true],
-    [true, false, true, false, true, false, true, false, true, true, false, true, false, true, true, true, true, true, true, false, true, true, false, true, true, true, true, true, true, true],
-    [true, false, true, true, false, true, true, false, true, false, true, true, true, false, true, true, true, true, true, false, true, true, false, true, true, true, true, true, true, true],
-    [true, false, true, true, true, true, true, false, true, false, false, false, false, false, true, true, true, true, false, true, true, true, false, true, true, true, true, true, true, true],
-    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, true, true, false, true, true, true, false, false, false, false, false, true, true, true],
-    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, true, false, true, true, true, true, false, true, true, true, true, true, true, true],
-    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, false, true, true, true, true, true, false, true, true, true, true, true, true, true],
-    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, false, true, true, true, true, true, false, true, true, true, true, true, true, true],
-    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, false, true, true, true, true, true, true, false, true, true, true, true, true, true, true],
-    [true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
-  ];
+  //randomSeed(Math.floor(random(4)));
+  grid = [];
+  for (var row = 0; row < numrows; row++) {
+    grid[row] = [];
+    for (var col = 0; col < numcolumns; col++) {
+      grid[row][col] = false;
+    }
+  }
 }
 
 function draw() {
@@ -49,7 +44,7 @@ function draw() {
       else {
         fill(60, 60, 60);
       }
-      rect(x*50, y*50, 50, 50);
+      rect(x*rowHeight, y*columnWidth, rowHeight, columnWidth);
     })
   })
   if (cell < 30)
