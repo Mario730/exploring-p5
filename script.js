@@ -37,7 +37,6 @@ var grid_sketch = function (p) {
   }
 }
 
-//var p5_grid = new p5(grid_sketch, "grid");
 
 var rules_sketch = function (p) {
   var grid;
@@ -46,8 +45,7 @@ var rules_sketch = function (p) {
   var rowHeight = 25;
   var columnWidth = 25;
 
-  p.setup = function() {
-    p.createCanvas(501, 251);
+  function my_setup() {
     grid = [];
     for (var row = 0; row < numrows; row++) {
       grid[row] = [];
@@ -56,6 +54,11 @@ var rules_sketch = function (p) {
       }
     }
     grid[0][0] = true;
+  }
+
+  p.setup = function() {
+    p.createCanvas(501, 251);
+    my_setup();
   }
 
   function interesting() {
@@ -90,9 +93,11 @@ var rules_sketch = function (p) {
       })
     })
   }
+  p.mouseClicked = function() {
+    my_setup();
+  }
 }
 
-//var p5_rules = new p5(rules_sketch, "rules");
 
 var snake_sketch = function (p) {
   var grid;
@@ -100,9 +105,10 @@ var snake_sketch = function (p) {
   var numcolumns = 25;
   var rowHeight = 20;
   var columnWidth = 20;
+  var row = 1;
+  var col = 2;
 
-  p.setup = function() {
-    p.createCanvas(500, 270);
+  function my_setup() {
     grid = [];
     for (var row = 0; row < numrows; row++) {
       grid[row] = [];
@@ -113,8 +119,10 @@ var snake_sketch = function (p) {
     grid[1][1] = true;
   }
 
-  row = 1;
-  col = 2;
+  p.setup = function() {
+    p.createCanvas(500, 270);
+    my_setup();
+  }
 
   function snake() {
     var topleft = grid[row-1] && grid[row-1][col-1];
@@ -157,7 +165,7 @@ var snake_sketch = function (p) {
       }
     }
     if (col > numcolumns) {
-      throw new Error('Program end');
+      p.noLoop();
     }
   }
 
@@ -176,6 +184,10 @@ var snake_sketch = function (p) {
       })
     })
   }
+  p.mouseClicked = function () {
+    row = 1;
+    col = 2;
+    my_setup();
+    p.loop();
+  }
 };
-
-//var p5_snake = new p5(snake_sketch, "snake");
