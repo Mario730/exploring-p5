@@ -3,43 +3,68 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
     <script src="script.js"></script>
     <style>
+      * {
+        font-family: "Arial";
+      }
+      body {
+        width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+      }
       div {
         display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
       }
-      #grid button {
+      p {
+        width: 500px;
+        line-height: 1.5em;
+      }
+      button {
+        display: block;
+      }
+      #grid_button {
         width: 251px;
         height: 251px;
       }
-      #rules button {
-        width: 1001px;
-        height: 501px;
+      #rules_button {
+        width: 501px;
+        height: 251px;
       }
-      #snake button {
-        width: 1000px;
-        height: 500px;
+      #snake_button {
+        width: 500px;
+        height: 270px;
       }
     </style>
   </head>
   <body>
     <h1>Exploring P5.js</h1>
-    <p>Intro paragraph</p>
+    <p>Intro paragraph
+    self-learning about rendering graphics
+    trying to get familiar with teh fundamentals (learn)
+    exploration of sepecific tool called p5
+    (link to p5,js.org) all of the code can be found at github.com/bla</p>
+    <h2>Simple Shape</h2>
     <div id="shape">
-      <p>shape</p>
+      <p>i started with drawing basic shaped to learn how p5 works -- builig blocks for more comlpex things</p>
     </div>
-    </div>
+    <h2>The Grid</h2>
     <div id="grid">
-      <p>grid</p>
+      <p>one idea was to move toward buidlling maze- like structures, so i rendered a grid of different colored squares -- in this case, we are rendering the grid from a 2 dimensionla array and drawing the squares randomly over the grid</p>
       <button id = "grid_button" onclick = "var p5_grid = new p5(grid_sketch, 'grid'); document.getElementById('grid_button').remove()">Click to start</button>
     </div>
+    <h2>Adding Rules</h2>
     <div id="rules">
-      <p>rules</p>
-
+      <p>I wanted to build a more complex algorithm for creating a solvable maze and to decide whether a specific square would be light otr dark and built a path tthrough a maze. i tried sevrl combinations to make sure that teh white squares dont clump</p>
       <button id = "rules_button" onclick = "var p5_rules = new p5(rules_sketch, 'rules'); document.getElementById('rules_button').remove()">Click to start</button>
     </div>
+    <h2>The Snake</h2>
     <div id="snake">
-      <p>snake</p>
+      <p>in order to make a more realistic path, i changed the perspective to have a current sqaure, then set rules for where the next square will be, fillling in the square each time. i also explored color and how each sqaure can have its own changin goclor</p>
       <button id = "snake_button" onclick = "var p5_snake = new p5(snake_sketch, 'snake'); document.getElementById('snake_button').remove()">Click to start</button>
     </div>
-    <p>conclusion/summary</p>
+    <h2>Conclusion</h2>
+    <p>thers many ideads about where this could go. 1) using input from some kinda of data set to choose how to draw these -- as of right no, most of data is randoml ygenerated but it could come from external data such as number of mcdonlads in teh world. 2) toward more generative art such as: mazes, maps, landscape drawings, and just art.</p>
+    <p>looking foward tyo BKLbh;a wto learn how to do more of this and see hwo other peole use it.</p>
   </body>
 </html>

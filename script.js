@@ -43,11 +43,11 @@ var rules_sketch = function (p) {
   var grid;
   var numrows = 10;
   var numcolumns = 20;
-  var rowHeight = 50;
-  var columnWidth = 50;
+  var rowHeight = 25;
+  var columnWidth = 25;
 
   p.setup = function() {
-    p.createCanvas(1001, 501);
+    p.createCanvas(501, 251);
     grid = [];
     for (var row = 0; row < numrows; row++) {
       grid[row] = [];
@@ -96,13 +96,13 @@ var rules_sketch = function (p) {
 
 var snake_sketch = function (p) {
   var grid;
-  var numrows = 25;
-  var numcolumns = 50;
+  var numrows = 13;
+  var numcolumns = 25;
   var rowHeight = 20;
   var columnWidth = 20;
 
   p.setup = function() {
-    p.createCanvas(1000, 500);
+    p.createCanvas(500, 270);
     grid = [];
     for (var row = 0; row < numrows; row++) {
       grid[row] = [];
