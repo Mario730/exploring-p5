@@ -1,10 +1,33 @@
-<style>
-</style>
 <html>
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
     <script src="script.js"></script>
+    <style>
+      div {
+        display: flex;
+      }
+    </style>
   </head>
   <body>
+    <h1>Exploring P5.js</h1>
+    <p>Intro paragraph</p>
+    <div id="shape">
+      <p>shape</p>
+    </div>
+    </div>
+    <div id="grid">
+      <p>grid</p>
+      <button id = "grid_button" onclick = "var p5_grid = new p5(grid_sketch, 'grid'); document.getElementById('grid_button').remove()">Click to start</button>
+    </div>
+    <div id="rules">
+      <p>rules</p>
+
+      <button id = "rules_button" onclick = "var p5_rules = new p5(rules_sketch, 'rules'); document.getElementById('rules_button').remove()">Click to start</button>
+    </div>
+    <div id="snake">
+      <p>snake</p>
+      <button id = "snake_button" onclick = "var p5_snake = new p5(snake_sketch, 'snake'); document.getElementById('snake_button').remove()">Click to start</button>
+    </div>
+    <p>conclusion/summary</p>
   </body>
 </html>
