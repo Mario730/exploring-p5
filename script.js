@@ -80,7 +80,9 @@ var rules_sketch = function (p) {
   }
 
   p.draw = function () {
-    interesting();
+    for(var i = 0; i < 10; i++) {
+      interesting();
+    }
     grid.forEach(function (row, y) {
       row.forEach(function (cell, x) {
         if (cell) {
